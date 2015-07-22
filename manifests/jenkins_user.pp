@@ -10,15 +10,15 @@ class puppetdeploy::jenkins_user {
     # ~/.ssh is implicitly created on the CA by ssh_authorized_key
     file { '/var/lib/jenkins/.ssh':
       ensure => directory,
-      owner  => 'puppet',
-      group  => 'puppet',
+      owner  => 'jenkins',
+      group  => 'jenkins',
       mode   => '0700',
     } ->
 
     file { '/var/lib/jenkins/.ssh/id_rsa':
       ensure  => file,
-      owner   => 'puppet',
-      group   => 'puppet',
+      owner   => 'jenkins',
+      group   => 'jenkins',
       mode    => '0600',
       content => $puppetdeploy::jenkins_private_key,
     }
