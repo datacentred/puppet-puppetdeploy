@@ -1,0 +1,20 @@
+{
+  "name": "spjmurray-puppetdeploy",
+  "version": "1.0.0",
+  "author": "Simon Murray",
+  "license": "GPL-3.0",
+  "summary": "Puppet code deployment orchestration",
+  "source": "https://github.com/spjmurray/puppet-puppetdeploy",
+  "project_page": "https://github.com/spjmurray/puppet-puppetdeploy",
+  "issues_url": "https://github.com/spjmurray/puppet-puppetdeploy/issues",
+  "tags": ["puppetdeploy"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "14.04", "14.10", "15.04" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "spjmurray/lsyncd", "version_requirement": ">=1.0.1" }
+  ]
+}
