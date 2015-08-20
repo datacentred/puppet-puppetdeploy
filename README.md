@@ -1,5 +1,7 @@
 #Puppet Deploy
 
+[![Build Status](https://travis-ci.org/spjmurray/puppet-puppetdeploy.png?branch=master)](https://travis-ci.org/spjmurray/puppet-puppetdeploy)
+
 ####Table Of Contents
 
 1. [Overview](#overview)
