@@ -4,17 +4,17 @@
 #
 class puppetdeploy::puppet_user {
 
-  # The puppet CA need a shell to accept push request from the continuous
-  # delivery server.  Puppet slaves need to accept rsync+ssh requests from
-  # the deploy master.
-  if $puppetdeploy::is_puppet_ca or $puppetdeploy::is_puppet_master {
-
-    user { 'puppet':
-      ensure => present,
-      shell  => '/bin/bash',
-    }
-
-  }
+#  # The puppet CA need a shell to accept push request from the continuous
+#  # delivery server.  Puppet slaves need to accept rsync+ssh requests from
+#  # the deploy master.
+#  if $puppetdeploy::is_puppet_ca or $puppetdeploy::is_puppet_master {
+#
+#    user { 'puppet':
+#      ensure => present,
+#      shell  => '/bin/bash',
+#    }
+#
+#  }
 
   # The CA needs the private key to talk to the masters
   if $puppetdeploy::is_puppet_ca {
