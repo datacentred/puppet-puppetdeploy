@@ -33,6 +33,13 @@ class puppetdeploy::puppet_user {
       group   => 'puppet',
       mode    => '0600',
       content => $puppetdeploy::puppet_private_key,
+    } ->
+
+    ssh_config { 'puppetdeploy disable strict host checks':
+      host   => "puppet*.${::domain}",
+      key    => 'StrictHostKeyChecking',
+      value  => 'no',
+      target => '/opt/puppetlabs/server/data/puppetserver/.ssh/config',
     }
 
   }
