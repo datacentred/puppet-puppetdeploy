@@ -71,9 +71,5 @@ class puppetdeploy (
 
   include ::puppetdeploy::puppet_user
   include ::puppetdeploy::jenkins_user
-  include ::puppetdeploy::lsyncd
-
-  Class['::puppetdeploy::puppet_user'] ->
-  Class['::puppetdeploy::lsyncd']
 
 }
