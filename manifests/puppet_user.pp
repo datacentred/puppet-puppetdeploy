@@ -20,14 +20,14 @@ class puppetdeploy::puppet_user {
   if $puppetdeploy::is_puppet_ca {
 
     # ~/.ssh is implicitly created on slaves by ssh_authorized_key
-    file { '/var/lib/puppet/.ssh':
+    file { '/opt/puppetlabs/server/data/puppetserver/.ssh':
       ensure => directory,
       owner  => 'puppet',
       group  => 'puppet',
       mode   => '0700',
     } ->
 
-    file { '/var/lib/puppet/.ssh/id_rsa':
+    file { '/opt/puppetlabs/server/data/puppetserver/.ssh/id_rsa':
       ensure  => file,
       owner   => 'puppet',
       group   => 'puppet',
@@ -45,6 +45,8 @@ class puppetdeploy::puppet_user {
       type => 'ssh-rsa',
       key  => $puppetdeploy::puppet_public_key,
     }
+
+    ensure_packages('rsync')
 
   }
 
